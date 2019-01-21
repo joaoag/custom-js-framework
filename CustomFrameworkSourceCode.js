@@ -1,17 +1,17 @@
 const it = (msg, fn) => describe('  ' + msg, fn)
 
 const describe = (desc, fn) => {
-  console.log(desc)
+  console.log(desc + ":")
   fn()
 }
 
 const passMessage = function() {
-  console.log('%c Pass!', 'color: #00af00')
+  console.log('%c*  Pass!  *', 'color: forestgreen; background: lightgreen')
   return true
 }
 
 const failMessage = function() {
-  console.log('%c Fail!', 'color: #ff0000')
+  console.log('%c*  Fail!  *', 'color: red; background: pink')
   return false
 }
 
