@@ -5,7 +5,7 @@ describe('Square', () => {
     expect(result).toBe(100)
   })
     it('only accepts numbers as an argument', () => {
-    x = function() { error_square = new Square(10) };
+    x = function() { error_square = new Square('a') };
     expect(x).toThrow(Error)
   })
 })

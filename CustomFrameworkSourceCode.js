@@ -5,14 +5,22 @@ const describe = (desc, fn) => {
   fn()
 }
 
+const passMessage = function() {
+  console.log('%c Pass!', 'color: #00af00')
+  return true
+}
+
+const failMessage = function() {
+  console.log('%c Fail!', 'color: #ff0000')
+  return false
+}
+
 const matchers = (exp) => ({
   toBe: (assertion) => {
     if (exp === assertion) {
-      console.log('Pass!')
-      return true
+      passMessage()
     } else {
-      console.log('Fail')
-      return false
+      failMessage()
     }
   },
   toThrow: (error) => {
@@ -24,7 +32,11 @@ const matchers = (exp) => ({
       result = 'Pass!';
     }
     finally {   
-      console.log(result);
+      if (result === 'Pass!') {
+      passMessage()
+      } else {
+      failMessage()
+      }
     }
   }
 })
