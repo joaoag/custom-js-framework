@@ -5,12 +5,12 @@ const describe = (desc, fn) => {
   fn()
 }
 
-const passMessage = function() {
+const passMessage = () => {
   console.log('%c*  Pass!  *', 'color: forestgreen; background: lightgreen')
   return true
 }
 
-const failMessage = function() {
+const failMessage = () => {
   console.log('%c*  Fail!  *', 'color: red; background: pink')
   return false
 }
